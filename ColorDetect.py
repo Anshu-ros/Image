@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
 cap = cv2.VideoCapture(0)
+fourcc= cv2.VideoWriter_fourcc(*'XVID')
+out = cv2.VideoWriter('output.avi',fourcc,20.0,(640,480))
 while(1):
     ret, frame=cap.read()
     hsv=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
